@@ -1,5 +1,6 @@
 
 import turtle
+import os
 
 #creating a turtle window
 wn = turtle.Screen()
@@ -105,10 +106,12 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
+        # os.system("aplay soundeffect.mp3")
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
+        # os.system("play soundeffect.mp3")
 
     # if ball.xcor() > 400:
     #     ball.setx(400)
