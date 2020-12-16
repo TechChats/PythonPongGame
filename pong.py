@@ -13,6 +13,11 @@ wn.tracer(0)
 #so just install tkinter: sudo apt-get install python3-tk
 
 
+# Score
+score_a = 0
+score_b = 0
+
+
 # We need two paddles and a ball
 
 # Paddle A
@@ -43,8 +48,19 @@ ball.color("white")
 ball.penup()
 ball.goto(0,0)
 
+#ball speed
 ball.dx = 0.5
 ball.dy = 0.5
+
+# Pen (score card)
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Player A: 0 Player B: 0", align="center", font=("Courier", 20, "normal"))
+
 
 
 # Functions
@@ -105,11 +121,17 @@ while True:
     if ball.xcor() > 390:
         ball.goto(0,0)
         ball.dx *= -1
+        score_a += 1
+        pen.clear()
+        pen.write("Player A: {} Player B: {}".format(score_a, score_b), align="center", font=("Courier", 20, "normal"))
+
 
     if ball.xcor() < -390:
         ball.goto(0,0)
         ball.dx *= -1
-
+        score_b += 1
+        pen.clear()
+        pen.write("Player A: {} Player B: {}".format(score_a, score_b), align="center", font=("Courier", 20, "normal"))
 
     # Paddle and ball collisions
     # in right paddle
