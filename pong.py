@@ -50,13 +50,13 @@ ball.penup()
 ball.goto(0,0)
 
 #ball speed
-ball.dx = 0.5
-ball.dy = 0.5
+ball.dx = 0.7
+ball.dy = 0.7
 
 # Pen (score card)
 pen = turtle.Turtle()
 pen.speed(0)
-pen.color("white")
+pen.color("yellow")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
@@ -67,22 +67,22 @@ pen.write("Player A: 0 Player B: 0", align="center", font=("Courier", 20, "norma
 # Functions
 def paddle_a_up():
     y = paddle_a.ycor()
-    y += 30
+    y += 40
     paddle_a.sety(y)
 
 def paddle_a_down():
     y = paddle_a.ycor()
-    y -= 30
+    y -= 40
     paddle_a.sety(y)
 
 def paddle_b_up():
     y = paddle_b.ycor()
-    y += 30
+    y += 40
     paddle_b.sety(y)
 
 def paddle_b_down():
     y = paddle_b.ycor()
-    y -= 30
+    y -= 40
     paddle_b.sety(y)
 
 # keyboard binding
